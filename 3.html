@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #191919;height: 100%">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="KLineChart example" />
+		<title>KLineChart + js</title>
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+
+		<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/klinecharts@7.0.0/dist/klinecharts.min.js"></script> -->
+		<script type="text/javascript" src="./js/kchart.js"></script>
+		<script type="text/javascript" src="./js/my.js"></script>
+	</head>
+	<body style="margin: 0;height: 100%">
+		<div id="chart" style="height: 100%"></div>
+		<script>
+			var chart;
+			window.onload = function() {
+
+				// 初始化图表
+				chart = klinecharts.init('chart')
+				// 创建一个主图技术指标
+				chart.createTechnicalIndicator('MA', false, {
+					id: 'candle_pane'
+				})
+				// 创建一个副图技术指标VOL
+				chart.createTechnicalIndicator('VOL')
+				// 加载数据
+
+				// chart.applyNewData(chartDataList)
+				getData(3)
+				setInterval(function() {
+					getData(3)		
+				}, time)
+			}
+
+			
+
+			
+
+
+			
+		</script>
+	</body>
+</html>
